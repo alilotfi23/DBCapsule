@@ -20,8 +20,8 @@ This command-line tool allows you to back up MySQL and PostgreSQL databases easi
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone [<repository-url>](https://github.com/alilotfi23/DBCapsule.git)
+   cd DBCapsule
    ```
 
 2. Install dependencies:
