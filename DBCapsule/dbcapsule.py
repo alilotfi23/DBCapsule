@@ -12,8 +12,10 @@ def backup(
         all: bool = typer.Option(False, help="Backup all databases"),
         single: Optional[str] = typer.Option(None, help="Backup a single database by name"),
         path: Path = typer.Option(..., help="Path to store the backup file"),
+        tablespaces: bool = typer.Option(False, help="Dump only tablespaces for PostgreSQL"),
+        schema: bool = typer.Option(False, help="Dump only the schema for PostgreSQL"),
 ):
-    if not (db_type == "mysql" or db_type == "postgres"):
+    if db_type not in ["mysql", "postgres"]:
         typer.echo("Please specify a valid database type: 'mysql' or 'postgres'.")
         raise typer.Exit()
 
@@ -26,15 +28,14 @@ def backup(
     if not path.exists():
         create_path = typer.confirm(f"Path {path} does not exist. Do you want to create it?")
         if not create_path:
-            typer.secho("Backup aborted.", fg=typer.colors.MAGENTA)
+            typer.style("Backup aborted.", fg=typer.colors.MAGENTA)
             raise typer.Exit()
         path.mkdir(parents=True, exist_ok=True)
 
     username = typer.prompt(f"Enter {db_type.upper()} username")
     password = typer.prompt(f"Enter {db_type.upper()} password", hide_input=True)
 
-    backup_database(db_type, username, password, db_name, path)
-
+    backup_database(db_type, username, password, db_name, path, tablespaces, schema)
 
 if __name__ == "__main__":
     app()
