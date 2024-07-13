@@ -7,6 +7,8 @@ This command-line tool allows you to back up MySQL and PostgreSQL databases easi
 
 - **Backup MySQL or PostgreSQL databases**
 - **Backup all databases or a single database**
+- **Dumps only the definitions of tablespaces no databases or roles (PostgreSQL)**
+- **Dumps only the schema no data (PostgreSQL)**
 - **Specify custom backup path**
 
 ## Prerequisites
@@ -50,25 +52,33 @@ python dbcapsule.py backup [OPTIONS]
 1. **Backup all MySQL databases**:
 
    ```bash
-   python dbcapsule.py backup --db-type mysql --all --path /path/to/your/backup/folder
+   python dbcapsule.py --db-type mysql --all --path /path/to/your/backup/folder
    ```
 
 2. **Backup single MySQL databases**:
 
    ```bash
-    python dbcapsule.py backup --db-type mysql --single your_database_name --path /path/to/your/backup/folder
+    python dbcapsule.py --db-type mysql --single your_database_name --path /path/to/your/backup/folder
    ```
 
 3. **Backup a all PostgreSQL database**:
 
    ```bash
-    python dbcapsule.py backup --db-type postgres --all --path /path/to/your/backup/folder
+    python dbcapsule.py --db-type postgres --all --path /path/to/your/backup/folder
    ```
 4. **Backup a single PostgreSQL database**:
 
    ```bash
-   python dbcapsule.py backup --db-type postgres --single your_database_name --path /path/to/your/backup/folder
+   python dbcapsule.py --db-type postgres --single your_database_name --path /path/to/your/backup/folder
    ```
+5. **Backup only the tablespaces of a single PostgreSQL database**:
+    ```bash
+    python dbcapsule.py backup --db-type postgres --single mydatabase --tablespaces --path /path/to/backup
+    ```
+6. **Backup only the schema of a single PostgreSQL database**:
+    ```bash
+    python dbcapsule.py backup --db-type postgres --single mydatabase --schema --path /path/to/backup
+    ```
 
 ## Notes
 
