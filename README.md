@@ -1,7 +1,7 @@
 
 # Database Backup Tool
 
-This command-line tool allows you to back up MySQL and PostgreSQL databases easily using Python and Typer.
+This command-line tool allows you to back up MySQL and PostgreSQL databases easily using Python and Typer (Python cli lib ).
 
 ## Features
 
