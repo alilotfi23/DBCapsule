@@ -1,5 +1,5 @@
 {
-  "name": "jenkins-terraform-k8s",
+  "name": "DBCapsule",
   "private": true,
   "devDependencies": {
     "@semantic-release/github": "^9.0.3",
