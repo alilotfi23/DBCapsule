@@ -61,7 +61,7 @@ python dbcapsule.py backup [OPTIONS]
     python dbcapsule.py --db-type mysql --single your_database_name --path /path/to/your/backup/folder
    ```
 
-3. **Backup a all PostgreSQL database**:
+3. **Backup all PostgreSQL database**:
 
    ```bash
     python dbcapsule.py --db-type postgres --all --path /path/to/your/backup/folder
