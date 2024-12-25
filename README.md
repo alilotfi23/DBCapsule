@@ -82,5 +82,5 @@ python dbcapsule.py backup [OPTIONS]
 
 ## Notes
 
-- Make sure to provide correct database credentials when prompted.
+- Could you make sure to provide correct database credentials when prompted?
 - Ensure the specified backup path exists or allow the tool to create it.
